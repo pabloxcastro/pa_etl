@@ -9,10 +9,13 @@ columns_default = config["columns_default"]
 
 
 # database:
-host = config["srv_database"]["srv_host"]
-database = config["srv_database"]["database"]
-user = config["srv_database"]["user"]
-pwd = config["srv_database"]["password"]
+host = config["engine"]["host"]
+database = config["engine"]["database"]
+user = config["engine"]["user"]
+pwd = config["engine"]["password"]
+table = config["engine"]["table_name"]
+
+
 
 
   
