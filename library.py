@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 import yaml
-import psycopg as psg
 
 # Função para criar um novo DF com as colunas do escopo baseado no DF Geral
 def select_col(df_geral, columns_out) -> pd.DataFrame:
