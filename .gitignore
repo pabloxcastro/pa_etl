@@ -1,0 +1,8 @@
+*.yaml
+venv
+old
+__pycache__
+data_files
+.DS_Store
+
+
