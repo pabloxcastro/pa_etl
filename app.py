@@ -1,4 +1,4 @@
-#import pandas as pd
+from sqlalchemy import create_engine
 from config.config import *
 from library import select_col
 from extraction_ieee import *
@@ -29,6 +29,10 @@ if __name__ == "__main__":
     # consolidando planilhas
     df_all_ouro = pd.concat([df_sd_prata, df_ieee_prata])
     df_all_ouro.to_excel(f'{dir}/df_all_ouro.xlsx', index = False)
+
+    # Inserindo no banco de dados
+    engine = create_engine(f'postgresql://{user}:{pwd}@{host}:5432/{database}')
+    df_all_ouro.to_sql(table, engine, if_exists='replace', index=True)
 
  
         

@@ -2,7 +2,8 @@ import pandas as pd
 import numpy as np
 import yaml
 
-# Função para criar um novo DF com as colunas do escopo baseado no DF Geral
+# Função para criar um novo DF com as colunas do escopo
+#  baseado no DF Geral
 def select_col(df_geral, columns_out) -> pd.DataFrame:
   
   new_df = pd.DataFrame()
@@ -13,12 +14,16 @@ def select_col(df_geral, columns_out) -> pd.DataFrame:
     for col in value:
       # verificar se um item do tipo existe no DF
       if col in df_geral.columns:
-        # se existir criar um nova coluna no new_DF com o rótulo do primeiro item da lista do tipo da coluna
+        # se existir criar um nova coluna no new_DF com
+        # o rótulo do primeiro item da lista do 
+        # tipo da coluna
         new_df[value[0]] = df_geral[col]
         break
       else:
-        # se a coluna não existir então verificar se é a última coluna da lista do tipo
-        # isso significa que não existe a coluna no DF, então criar um coluna com o rótulo do primeiro item 
+        # se a coluna não existir então verificar se é a última 
+        # coluna da lista do tipo
+        # isso significa que não existe a coluna no DF, 
+        # então criar um coluna com o rótulo do primeiro item 
         # com conteúdo em branco
         if col == value[-1]:
           new_df[value[0]] = np.nan
