@@ -2,7 +2,7 @@ import os
 import requests
 import pandas as pd
 from config.config import *
-from library import explode_authors, explode_keywords
+from library import explode_authors, explode_keywords, Log_pa
 
 def getUrlApi_ieee(start, max):
     url_api = config["api_ieee"]["uri"]
@@ -33,11 +33,11 @@ def extract_ieee() -> pd.DataFrame:
     df_ieee_bronze = pd.DataFrame()
 
     while total_records > 0:
-
+        
         url_api = getUrlApi_ieee(start_record, max_records)
-
+        
         response = requests.get(url_api)
-
+        
         if response.status_code == 200:
 
             dados_ieee = response.json()

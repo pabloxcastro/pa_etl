@@ -1,3 +1,4 @@
+import logging
 import pandas as pd
 import numpy as np
 import yaml
@@ -78,4 +79,19 @@ def clean_year(column):
     new_year = year[0:4]
     new_col.append(new_year)  
   return new_col
+
+class Log_pa:
+    
+    log_format = '%(asctime)s: %(levelname)s: %(message)s '
+
+    logging.basicConfig(filename = 'pa-etl.log',
+                    filemode = 'w',
+                    level = logging.INFO,
+                    format =  log_format)
+    
+    @staticmethod
+    def log_write(text):
+      logger = logging.getLogger('root')
+      logger.info(text)
+      
 
