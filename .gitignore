@@ -6,4 +6,6 @@ data_files
 .DS_Store
 insert_db.py
 pa-etl.log
+.dockerignore
+Dockerfile
 

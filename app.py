@@ -16,7 +16,7 @@ if __name__ == "__main__":
     df_sd_bronze.to_excel(f'{dir}/{file_sd_brz}', index = False)
     Log_pa.log_write(f"SD - planilha bronze criada {dir}/{file_sd_brz}")
 
-    s3.upload_file(f"{dir}/{file_sd_brz}", bucket, f"{obj_bronze}/{file_sd_brz}")    §
+    s3.upload_file(f"{dir}/{file_sd_brz}", bucket, f"{obj_bronze}/{file_sd_brz}")
     Log_pa.log_write(f"SD - enviado para o bucket {bucket} {obj_bronze}/{file_sd_brz}")
 
     # Padronizando colunas
