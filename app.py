@@ -9,6 +9,7 @@ if __name__ == "__main__":
 
     # LENDO FONTE DE DADOS
     # SD - Extraindo 
+    
     df_sd_bronze = extract_sd()
     log_text = f"SD - Dados lidos - linhas: {df_sd_bronze.shape[0]} e colunas: {df_sd_bronze.shape[1]}"
     Log_pa.log_write(log_text)
