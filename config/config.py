@@ -36,7 +36,7 @@ columns_default = config["columns_default"]
 # database:
 host = config["engine"]["host"][1]
 database = config["engine"]["database"][1]
-user = config["engine"]["user"]
+user = config["engine"]["user"][1]
 pwd = config["engine"]["password"][1]
 table = config["engine"]["table_name"]
 

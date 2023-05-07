@@ -75,14 +75,16 @@ api_sd:
 engine:
   host: 
     - localhost
-    - db-igti-pa.clpkripxtvui.us-east-2.rds.amazonaws.com
+    - database-pa-api.cfwv8a8fm3jy.us-east-1.rds.amazonaws.com
   database: 
     - pa
+    - paigtiapi
+  user:
     - postgres
-  user: postgres
+    - paetl
   password: 
     - virtual
-    - NgLHnKOGIgCemRb3KhC1
+    - kasTPZv9ELCb6XHv
   table_name: publications
 
 
