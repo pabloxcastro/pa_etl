@@ -1,9 +1,12 @@
+*.yaml
+venv
 old
 __pycache__
-data_files
+data
 .DS_Store
 insert_db.py
 pa-etl.log
 .dockerignore
 Dockerfile
+
 
