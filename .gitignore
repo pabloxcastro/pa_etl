@@ -1,4 +1,4 @@
-*.yaml
+
 venv
 old
 __pycache__
