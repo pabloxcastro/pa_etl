@@ -1,0 +1,91 @@
+files: 
+  dir: "data"
+  sd_brz: "df_sd_bronze.xlsx"
+  sd_prt: "df_sd_prata.xlsx"
+  ieee_brz: "df_ieee_bronze.xlsx"
+  ieee_prt: "df_ieee_prata.xlsx"
+  all_ouro: "df_all_ouro.xlsx"
+  log: "pa-etl.log"
+  
+  obj_bronze: "bronze"
+  obj_prata: "prata"
+  obj_ouro: "ouro"
+  obj_log: "logs"
+  bucket: "igtipadata"  
+
+aws:
+  access_key: "AKIATNTTUSAAMPIQ4LVD"
+  secret_key: "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"
+
+
+
+columns_default:
+  author:
+    - author
+    - dc:creator
+    - authors   
+  title:
+    - title
+    - dc:title
+  keywords:
+    - keywords
+    - index_terms
+    - dc:title
+  abstract:
+    - abstract
+    - dc:title
+  year:
+    - year
+    - publication_year
+    - load-date
+  type_publication: 
+    - type_publication
+    - content_type
+    - prism:publicationName
+  doi:
+    - doi
+    - dc:identifier    
+
+
+find:
+  title: BIG
+  keywords: DATA
+  abstract: BIG DATA
+  year: 2020
+  type_publication: 
+  doi: doi.org
+
+api_ieee: 
+  uri: https://ieeexploreapi.ieee.org/api/v1/search/articles?
+  #apikey: whpwmy7cp2v2gbeq5pkhfgas 
+  apikey: z34aqfzkvu36wg248cx2cf8z 
+  article_title: #bigdata
+  author: 
+  abstract: BigData
+
+api_sd:
+  uri: https://api.elsevier.com/content/search/sciencedirect?
+  #apiKey: ea45664ecf1507f53399d5aa278ae772
+  #apiKey: e93680b6112f0f801bbd758197aa5cce  
+  apiKey: 7f59af901d2d86f78a1fd60c1bf9426a # sd
+  query: bigdata
+
+
+# database
+engine:
+  host: 
+    - localhost
+    - db-igti-pa.clpkripxtvui.us-east-2.rds.amazonaws.com
+  database: 
+    - pa
+    - postgres
+  user: postgres
+  password: 
+    - virtual
+    - NgLHnKOGIgCemRb3KhC1
+  table_name: publications
+
+
+
+
+  
