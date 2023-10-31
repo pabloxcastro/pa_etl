@@ -1,4 +1,6 @@
-
+.gitignore
+*.yaml
+config
 venv
 old
 __pycache__
